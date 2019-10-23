@@ -1,0 +1,97 @@
+{% extends "Admin/layoutAdmin.twig" %}
+
+{% block title %}
+
+    Condominium Imperium | Área 
+    {% if functionAccess == 'admin' %}
+        Administrativa
+    {% elseif functionAccess == 'worker' %}
+        do Funcionário
+    {% else %}
+        Erro Interno
+    {% endif %} | Relatórios
+
+{% endblock title %}
+
+{% block contentAdmin %}
+    
+    {% if access == 0 %}
+
+        <h1>Central de relatórios</h1>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Relatório em CSV</h5>
+                    <p class="card-text">Exporte relatório em csv, separados em colunas para trabalhar com os dados em planilhas.</p>
+                    <a href="#" class="btn btn-outline-success" data-href="csv" data-toggle="modal" data-target="#confirm-report"><i class="fas fa-file-csv"></i> Exportar</a>
+                </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Relatório em PDF</h5>
+                    <p class="card-text">Para um arquivo mais compacto e únificado para armazenamento, exporte em PDF.</p>
+                    <a href="#" class="btn btn-outline-danger" data-href="pdf" data-toggle="modal" data-target="#confirm-report"><i class="fas fa-file-pdf"></i> Exportar</a>
+                </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="modal fade" id="confirm-report" tabindex="-1" role="dialog" aria-labelledby="confirm-report" aria-hidden="true">
+
+            <div class="modal-dialog" role="document">
+
+                <div class="modal-content">
+
+                    <div class="modal-header">
+
+                        <h5 class="modal-title text-info" id="ModalLabelConfirmReport"><i class="fas fa-stream"></i> Gerar Relatório</h5>
+
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+
+                        <span aria-hidden="true">&times;</span>
+
+                        </button>
+
+                    </div>
+
+                    <div class="modal-body">
+
+                        Qual área você deseja gerar o relatório?
+
+                    </div>
+
+                    <div class="modal-footer">
+                        
+                        <form action="{{ appHost ~ 'report/export/forUser' }}" name="frmConfirmReport" id="frmConfirmReport" class="col-12 col-sm-12">
+                            
+                            <input type="hidden" name="typeReport" id="typeReport" />
+                            <input type="hidden" name="urlReport" id="urlReport" value="{{ appHost ~ 'report/export/forUser' }}" />                           
+                            
+                            <div class="form-group" id="btnGroups">
+
+                            </div>
+
+                            <div class="form-group" id="btnGroupsSend">
+
+
+                            </div>
+
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    {% endif %}
+    
+{% endblock contentAdmin %}

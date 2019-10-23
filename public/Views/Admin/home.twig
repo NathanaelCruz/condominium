@@ -1,0 +1,73 @@
+{% extends "Admin/layoutAdmin.twig" %}
+
+{% block title %}
+    Condominium Imperium | Área 
+    {% if functionAccess == 'admin' %}
+        Administrativa
+    {% elseif functionAccess == 'worker' %}
+        do Funcionário
+    {% else %}
+        Erro Interno
+    {% endif %}
+{% endblock title %}
+
+{% block contentAdmin %}
+    
+    <div id="topHome" class="clearfix wow fadeIn">
+        
+        <figure id="topHomeRight">
+            <img src={{ appHost ~ 'Storage/site/banner/' ~ 'img01.jpg'}} class="img-fluid" alt="Banner do condominium">
+            <figcaption>
+                <i class="fas fa-crown" id="icon"></i> Condominium Imperium
+            </figcaption>
+        </figure>
+
+        <div id="topHomeLeft">
+            <p class="text-center">
+                <span class="letterDateBigger">{{ dateToday.day }}</span> / {{ dateToday.month }} <br> <i class="far fa-calendar-alt"></i>
+            </p>
+        </div>
+
+
+    </div>
+
+    <div id="mainHome" class="clearfix">
+        
+        <a href={{ appHost ~ 'area/' ~ functionAccess ~ '/list/visit'}}>
+            <div class="infoItem wow flipInY" data-wow-delay=".30s" id="infoVisit">
+                <p class="text-center">
+                    <span class="letterDateBigger">{{ visits }}</span> <br> Visitantes <br> <i class="fas fa-user-clock"></i>
+                </p>
+            </div>
+        </a>
+        <a href={{ appHost ~ 'area/' ~ functionAccess ~ '/list/resident'}}>
+            <div class="infoItem wow flipInY" data-wow-delay=".40s" id="infoResident">
+                <p class="text-center">
+                    <span class="letterDateBigger">{{ residents }}</span> <br> Moradores <br> <i class="fas fa-users"></i>
+                </p>
+            </div>
+        </a>
+        <a href={{ appHost ~ 'area/' ~ functionAccess ~ '/list/EE'}}>
+            <div class="infoItem wow flipInY" data-wow-delay=".50s" id="infoVisitCurrent">
+                <p class="text-center">
+                    <span class="letterDateBigger">{{ visitCurrent }}</span> <br> Visitas <br> <i class="fas fa-walking"></i>
+                </p>
+            </div>
+        </a>
+
+        {% if access == 0 %}
+            <a href={{ appHost ~ 'area/' ~ functionAccess ~ '/list/worker'}}>
+                <div class="infoItem wow flipInY" data-wow-delay=".55s" id="infoWorker">
+                    <p class="text-center">
+                        <span class="letterDateBigger">{{ workers }}</span> <br> Funcionários <br> <i class="fas fa-user-tie"></i>
+                    </p>
+                </div>
+            </a>
+        {% endif %}
+
+
+    </div>
+
+
+    
+{% endblock contentAdmin %}

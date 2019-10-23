@@ -1,0 +1,74 @@
+{% extends "Admin/layoutAdmin.twig" %}
+
+{% block title %}
+
+    Condominium Imperium | Área 
+    {% if functionAccess == 'admin' %}
+        Administrativa
+    {% elseif functionAccess == 'worker' %}
+        do Funcionário
+    {% else %}
+        Erro Interno
+    {% endif %} | Lista de 
+    {% if areaChoice == 'worker' %}
+        Funcionários
+    {% elseif areaChoice == 'visit' %}
+        Visitantes
+    {% elseif areaChoice == 'resident' %}
+        Moradores
+    {% else %}
+        Não Identificado
+    {% endif %}
+
+{% endblock title %}
+
+{% block contentAdmin %}
+    
+    <h1>{% if areaChoice == 'worker' %}
+        Funcionário {{ dataConsult.name }}
+    {% elseif areaChoice == 'visit' %}
+        Visitante {{ dataConsult.name }}
+    {% elseif areaChoice == 'resident' %}
+        Morador {{ dataConsult.name }}
+    {% else %}
+        Não Identificado
+    {% endif %}</h1>
+
+    {% if areaChoice == 'worker' or areaChoice == 'visit' or areaChoice == 'resident'%}
+        <br>
+
+        {% for user in dataConsult %}
+
+            {% set phone = user.phone|split('') %}
+            <div class="card wow flipInY" style="width: 18rem;">
+                <img class="card-img-top" src={{ appHost ~ 'Storage/' ~ user.token_user ~ '.jpg'}} alt="Photo">
+                <div class="card-body">
+                    <h5 class="card-title font-weight-bold">{{ user.name }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{ user.email }}</h6>
+                    <p class="card-text">O <span>RG</span> de {{ user.name }} é {{ user.rg }}, tem o CPF {{ user.cpf }}. O telefone é ({{ phone[0] ~ phone[1] }}) 
+                        {% if phone|length >= 11 %}
+                            {{ phone[2] ~ phone[3] ~ phone[4] ~ phone[5] ~ phone[6]}} - {{ phone[7] ~ phone[8] ~ phone[9] ~ phone[10]}}
+                        {% else %}
+
+                            {{ phone[2] ~ phone[3] ~ phone[4] ~ phone[5]}} - {{ phone[6]~ phone[7] ~ phone[8] ~ phone[9]}}
+
+                        {% endif %}
+                    , nascido em {{ user.birthday|date('d/m/Y') }}.</p>
+                    <p class="card-text">Cadastrado em </p>
+                    {% if areaChoice == 'worker' %}
+                        <p class="card-text"><span class="font-weight-bold">Login:</span> {{ user.login }}</p>
+                    {% elseif areaChoice == 'visit' %}
+                        <p class="card-text"><span class="font-weight-bold">Data da primeira visita</span> <br>{{ user.visit_date|date('d/m/Y H:i:s') }}</p>
+                    {% elseif areaChoice == 'resident' %}
+                        <p class="card-text">Média Salarial R$ {{ user.avg_income|number_format(2, ',', '.') }}</p>
+                    {% else %}
+                        Não Identificado
+                    {% endif %}
+                    <a href={{ appHost ~ 'area/' ~ functionAccess ~ '/update/' ~ areaChoice ~ '/' ~ idItem ~ '/' ~ user.id_user }} class="btn btn-primary">Quero Editar</a>
+                </div>
+            </div>
+        {% endfor %}
+
+    {% endif %}
+    
+{% endblock contentAdmin %}

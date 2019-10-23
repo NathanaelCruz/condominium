@@ -1,0 +1,100 @@
+{% extends "Admin/layoutAdmin.twig" %}
+
+{% block title %}
+
+    Condominium Imperium | Área 
+    {% if functionAccess == 'admin' %}
+        Administrativa
+    {% elseif functionAccess == 'worker' %}
+        do Funcionário
+    {% else %}
+        Erro Interno
+    {% endif %} | Registrar de 
+    {% if areaChoice == 'EE' %}
+        Saídas
+    {% else %}
+        Não Identificado
+    {% endif %}
+
+{% endblock title %}
+
+{% block contentAdmin %}
+    
+
+    <h1>Registrar {% if areaChoice == 'EE' %}
+        Saída
+    {% else %}
+        Não Identificado
+    {% endif %}</h1>
+    {% if areaChoice == 'EE'%}
+        <br>
+
+
+        {% for ee in dataConsult %}
+
+
+            <form action="{{ appHost ~ 'storage/new/EE/Exit' }}" name="frmUpdateEE" id="frmUpdateEE" method="POST" class="wow bounce">
+
+                <div class="card" style="width: 18rem;" id="cardProfile">
+                    <img id="imgEE" class="card-img-top" src={{ appHost ~ 'Storage/' ~ ee.token_user ~ '.jpg'}} alt="Photo de perfil">
+                    <div class="card-body">
+                        <h5 class="card-title">Sua foto Atual</h5>
+                    </div>
+                </div>
+                <br>
+                    
+                <input type="hidden" id="idEEUpdate" name="idEEUpdate" value="{{ ee.id_EE }}">
+                
+                <fieldset disabled>
+
+                    <div class="form-row">
+                        <div class="col">
+                            <label for="name">Nome</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Nome do documento solicitado" maxlength="200" value="{{ ee.name }}" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col">
+                            <label for="fldEmail">Email</label>
+                            <input type="email" class="form-control" id="fldEmail" name="fldEmail" placeholder="E-mail do documento solicitado" maxlength="255" value="{{ ee.email }}" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col">
+                            <label for="rg">RG</label>
+                            <input type="text" class="form-control" id="rg" name="rg" placeholder="RG do documento solicitado" maxlength="12" value="{{ ee.rg }}" required>
+                        </div>
+                        <div class="col">
+                            <label for="cpf">CPF</label>
+                            <input type="text" class="form-control" id="cpf" name="cpf" placeholder="CPF do documento solicitado" value="{{ ee.cpf }}" maxlength="14" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col">
+                            <label for="phone">Telefone</label>
+                            <input type="text" class="form-control" id="phone" name="phone" placeholder="Telefone do documento solicitado" maxlength="20" value="{{ ee.phone }}" required>
+                        </div>
+                        <div class="col">
+                            <label for="birthday">Data de Nascimento</label>
+                            <input type="date" class="form-control" id="birthday" name="birthday" placeholder="Data de nascimento do documento solicitado" value="{{ ee.birthday }}" required>
+                        </div>
+                    </div>
+
+                </fieldset>
+
+                <div class="form-row">
+                    <div class="col">
+                        <label for="fldLogin">Descrição da Saída</label>
+                        <textarea class="form-control col-12" id="descriptionEE" name="descriptionEE" placeholder="Digite uma descrição, caso necessário, como está com crianças ou idades." rows="4">{{ ee.description }}</textarea>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-outline-success col-12 col-sm-3"><i class="fas fa-arrow-left"></i> Registrar Saída</button>
+
+            </form>
+        {% endfor %}
+
+    {% endif %}
+    
+{% endblock contentAdmin %}

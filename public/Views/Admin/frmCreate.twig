@@ -1,0 +1,129 @@
+{% extends "Admin/layoutAdmin.twig" %}
+
+{% block title %}
+
+    Condominium Imperium | Área 
+    {% if functionAccess == 'admin' %}
+        Administrativa
+    {% elseif functionAccess == 'worker' %}
+        do Funcionário
+    {% else %}
+        Erro Interno
+    {% endif %} | Cadastro de 
+    {% if areaChoice == 'worker' %}
+        Funcionários
+    {% elseif areaChoice == 'visit' %}
+        Visitantes
+    {% elseif areaChoice == 'resident' %}
+        Moradores
+    {% else %}
+        Não Identificado
+    {% endif %}
+
+{% endblock title %}
+
+{% block contentAdmin %}
+    
+    <h1>Cadastro de {% if areaChoice == 'worker' %}
+        Funcionário
+    {% elseif areaChoice == 'visit' %}
+        Visitante
+    {% elseif areaChoice == 'resident' %}
+        Morador
+    {% else %}
+        Não Identificado
+    {% endif %}</h1>
+
+    {% if (areaChoice == 'worker' and access == 0 ) or areaChoice == 'visit' or areaChoice == 'resident'%}
+        <br>
+
+        <div class="row" id="photo_perfil">
+            <div class="col-12 col-sm-12 col-lg-3">
+                <div id="my_cameraRecord" class="border border-secondary">
+
+                </div>
+                <input type="button" class="btn btn-outline-primary" value="Será que Ficou bom?" id="btn_take_snap" onClick="take_snapshotRecord('{{ photoTemp }}', '{{ appHost }}')" />
+
+                <input type="hidden" name="imageRecord" class="image-tagRecord" />
+            
+            </div>
+            <div class="col-12 col-sm-12 col-lg-4">
+                <div id="resultsRecord" class="border border-info">
+
+                </div>
+            </div>
+        </div>
+        <br>
+        <form action={{ appHost ~ 'storage/new/' ~ areaChoice }} method="POST"  name="frmCreateUser" id="frmCreateUser" enctype="multipart/form-data" class="wow bounce">
+
+            <input type="hidden" name="photoTemp" value="{{ photoTemp }}" />
+
+            <div class="form-row">
+                <div class="col">
+                    <label for="name">Nome</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Digite seu nome" maxlength="200" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col">
+                    <label for="fldEmail">Email</label>
+                    <input type="email" class="form-control" id="fldEmail" name="fldEmail" placeholder="Digite seu e-mail" maxlength="255" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col">
+                    <label for="rg">RG</label>
+                    <input type="text" class="form-control" id="rg" name="rg" placeholder="Digite seu RG" maxlength="12" required>
+                </div>
+                <div class="col">
+                    <label for="cpf">CPF</label>
+                    <input type="text" class="form-control" id="cpf" name="cpf" placeholder="Digite seu cpf" maxlength="14" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col">
+                    <label for="phone">Telefone</label>
+                    <input type="text" class="form-control" id="phone" name="phone" placeholder="Digite seu telefone" maxlength="20" required>
+                </div>
+                <div class="col">
+                    <label for="birthday">Data de Nascimento</label>
+                    <input type="date" class="form-control" id="birthday" name="birthday" placeholder="Digite sua data de nascimento" required>
+                </div>
+            </div>
+
+            {% if areaChoice == 'worker' %}
+                <div class="form-row">
+                    <div class="col">
+                        <label for="fldLogin">Login</label>
+                        <input type="text" class="form-control" id="fldLogin" name="fldLogin" placeholder="Digite um login" maxlength="200" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <label for="fldPassword">Senha</label>
+                        <input type="password" class="form-control" id="fldPassword" name="fldPassword" placeholder="Digite uma senha" maxlength="200" required>
+                    </div>
+                    <div class="col">
+                        <label for="fldPasswordAgain">Digite a senha novamente</label>
+                        <input type="password" class="form-control" id="fldPasswordAgain" name="fldPasswordAgain" placeholder="Digite a mesma senha" maxlength="50" equalTo="#fldPassword" required>
+                    </div>
+                </div>
+            {% elseif areaChoice == 'resident' %}
+                <div class="form-row">
+                    <div class="col">
+                        <label for="avgIncome">Média Salarial</label>
+                        <input type="text" class="form-control" id="avgIncome" name="avgIncome" placeholder="Uma média salarial R$" maxlength="10" required>
+                    </div>
+                </div>
+                
+            {% endif %}
+
+
+            <button type="submit" class="btn btn-outline-success col-12 col-sm-3"><i class="fas fa-check"></i> Cadastrar</button>
+
+        </form>
+
+    {% endif %}
+    
+{% endblock contentAdmin %}

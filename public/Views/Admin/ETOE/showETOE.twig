@@ -1,0 +1,70 @@
+{% extends "Admin/layoutAdmin.twig" %}
+
+{% block title %}
+
+    Condominium Imperium | Área 
+    {% if functionAccess == 'admin' %}
+        Administrativa
+    {% elseif functionAccess == 'worker' %}
+        do Funcionário
+    {% else %}
+        Erro Interno
+    {% endif %} | Lista de 
+    {% if areaChoice == 'EE' %}
+        Entradas e Saídas
+    {% else %}
+        Não Identificado
+    {% endif %}
+
+{% endblock title %}
+
+{% block contentAdmin %}
+    
+    <h1>{% if areaChoice == 'EE' %}
+        Entrada e Saída de {{ data.name }}
+    {% else %}
+        Não Identificado
+    {% endif %}</h1>
+
+    {% if areaChoice == 'EE' %}
+        <br>
+
+        {% for ee in dataConsult.user %}
+
+            {% set phone = ee.phone|split('') %}
+            <div class="card wow flipInY" style="width: 18rem;">
+                <img class="card-img-top" src={{ appHost ~ 'Storage/' ~ ee.token_user ~ '.jpg'}} alt="Photo">
+                <div class="card-body">
+                    <h5 class="card-title font-weight-bold">{{ ee.name }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Email</h6>
+                    <p class="card-text">O RG de {{ ee.name }} é {{ ee.rg }}, tem o CPF {{ ee.cpf }}. O telefone é ({{ phone[0] ~ phone[1] }}) 
+                        {% if phone|length >= 11 %}
+                            {{ phone[2] ~ phone[3] ~ phone[4] ~ phone[5] ~ phone[6]}} - {{ phone[7] ~ phone[8] ~ phone[9] ~ phone[10]}}
+                        {% else %}
+
+                            {{ phone[2] ~ phone[3] ~ phone[4] ~ phone[5]}} - {{ phone[6]~ phone[7] ~ phone[8] ~ phone[9]}}
+
+                        {% endif %}, nascido em {{ ee.birthday|date('d/m/Y') }}.</p>
+                    <p class="card-text">Cadastrado em {{ ee.record_date|date('d/m/Y H:i:s')}}</p>
+                    <p class="card-text"><span class="font-weight-bold">Entrada:</span> {{ ee.date_entrance|date('d/m/Y H:i:s') }}</p>
+                    {% if ee.data_exit != '' or ee.data_exit != null %}
+                        <p class="card-text"><span class="font-weight-bold">Saída:</span> {{ ee.data_exit }}</p>
+                    {% else %}
+                        <p class="card-text"><span class="font-weight-bold">Saída:</span> Ainda está dentro do condominio.</p>
+                    {% endif %}
+
+                    {% if ee.description == '' or ee.description == null %}
+                        <p class="card-text">Sem descrição</p>
+                    {% else %}
+                        <p class="card-text"><span class="font-weight-bold">Descrição:</span> <br>{{ ee.description }}</p>
+                    {% endif %}
+
+                    <a href="{{ appHost ~ 'area/' ~ functionAccess ~ '/exit/for/update/' ~ ee.id_EE }}" class="btn btn-primary">Quero Editar</a>
+                </div>
+            </div>
+
+        {% endfor %}
+
+    {% endif %}
+    
+{% endblock contentAdmin %}

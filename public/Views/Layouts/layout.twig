@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}
+        
+    {% endblock title %}</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href={{ appHost ~ 'public/css/animate.css'}} />
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+    
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href={{ appHost ~ 'public/css/app.css'}} />
+
+    <link rel="shortcut icon" href={{ appHost ~ 'Storage/site/favicon.ico'}} />
+
+    
+</head>
+<body>
+
+    {% block content %}
+        
+    {% endblock content %}
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="  crossorigin="anonymous"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" integrity="sha256-z6FznuNG1jo9PP3/jBjL6P3tvLMtSwiVAowZPOgo56U=" crossorigin="anonymous"></script>
+    
+    <script src={{ appHost ~ 'public/js/jquery.validate.min.js'}}></script>
+    <script src={{ appHost ~ 'public/js/additional-methods.min.js'}}></script>
+    <script src={{ appHost ~ 'public/js/localization/messages_pt_BR.min.js'}}></script>
+    <script src={{ appHost ~ 'public/js/wow.min.js'}}></script>
+    <script src={{ appHost ~ 'public/js/scriptAddModalValue.js'}}></script>
+    <script src={{ appHost ~ 'public/js/validateLogin.js'}}></script>
+    <script src={{ appHost ~ 'public/js/validateActionSystem.js'}}></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
+    <script src={{ appHost ~ 'public/js/maskForInputForms.js'}}></script>
+
+    {% if area != null or area != ''%}
+        {% if area == 'account'%}
+
+            <script src={{ appHost ~ 'public/js/webCamCapture.js'}}></script>
+
+        {% else %}
+
+            <script src={{ appHost ~ 'public/js/webCamCapturaRecord.js'}}></script>
+
+        {% endif %}
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,124 @@
+{% extends "Layouts/layout.twig" %}
+
+
+{% block content %}
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+
+        <a class="navbar-brand mr-auto" href={{ appHost ~ 'area/' ~ functionAccess}}><i class="fas fa-crown" id="icon"></i> Condominium Imperium</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+
+            <span class="navbar-text ml-auto">
+                Seja bem-vindo, 
+            </span>
+
+            <ul class="navbar-nav">
+
+                <li class="nav-item dropdown">
+
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{ data.name }}
+                    </a>
+
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+                        <a class="dropdown-item" href={{ appHost ~ 'area/' ~ functionAccess ~ '/myaccount/' ~ tokenUser}}>Minha <br> Conta</a>
+                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modalCloseAccount">Sair</a>
+
+                    </div>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </nav>
+
+    <div class="modal fade" id="modalCloseAccount" tabindex="-1" role="dialog" aria-labelledby="modalCloseAccount" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="TituloModalLongoExemplo">Já está indo?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    
+                    Tem certeza que deseja sair?
+
+                </div>
+                <div class="modal-footer">
+
+                    <form method="POST" action={{ appHost ~ 'destroyer/login/request'}} name="frmModalLogout" id="frmModalLogout">
+
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Melhor não</button>
+
+                        <button type="submit" class="btn btn-danger">Sim, tenho certeza</button>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid col-12 col-sm-12">
+
+        <div id="iconMenuForCell" class="text-light rounded-circle">
+            
+            <button type="button" class="btn btn-dark rounded-circle" data-toggle="modal" data-target="#modalMenuForCell"><i class="fas fa-bars"></i></button>
+
+        </div>
+
+        <div class="modal fade" id="modalMenuForCell" tabindex="-1" role="dialog" aria-labelledby="modalMenuForCell" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="TituloModalLongoExemplo">Menu</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        
+                        {% include "Admin/menuVerticalAdmin.twig" with {'type': 'modalMenu'} %}
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="nav-menu" class="col col-2 col-sm-2 border-top border-3 border-secondary  navbar-dark bg-dark position-fixed">
+
+            {% include "Admin/menuVerticalAdmin.twig" with {'type': 'normal'} %}
+
+        </div>
+
+        <div id="content-page" class="col col-10 col-sm-10">
+
+            {% block contentAdmin %}
+                
+                
+            {% endblock contentAdmin %}
+        </div>
+
+        <div class="clearfix"></div>
+
+    </div>
+    
+{% endblock content %}

@@ -1,0 +1,700 @@
+body{
+
+    font-family: 'Noto Sans', sans-serif;
+}
+
+a,
+.dropdown-menu .dropdown-item,
+.nav-item a{
+
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition:.5s;
+
+}
+
+a, .dropdown-menu .dropdown-item{
+
+    color: rgb(148, 148, 148);
+
+}
+
+.container{
+
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(90deg, #8B008B, #191970);
+    overflow-y:hidden;
+
+}
+
+.container-fluid{
+
+    width: 100%;
+    margin: 0;
+
+}
+
+#boxLogin{
+
+    width: 300px;
+    min-height: 300px;
+    max-height: auto;
+
+}
+
+#boxForgot{
+
+    width: 350px;
+    min-height: 270px;
+    max-height: auto;
+
+}
+
+#errorIntern{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20%;
+
+}
+
+#alertCarrying{
+
+    display: none;
+
+}
+
+#boxReset{
+
+    width: 350px;
+    min-height: 290px;
+    max-height: auto;
+
+}
+
+#boxLogin, #boxForgot, #boxReset{
+
+    background-color: rgb(230, 230, 230);
+    padding: 10px;
+
+}
+
+.input-group-text{
+
+    background-color: rgb(255,255,255);
+
+}
+
+#login, #password, #email, #passwordEqual{
+
+    border-left: 0;
+
+}
+
+#frmLogin h5{
+
+    margin: 10px auto;
+
+}
+
+#frmLogin #icon,
+#frmForgot #icon,
+.navbar .navbar-brand #icon,
+#topHome #topHomeRight figcaption #icon{
+    
+    color: rgb(247, 195, 10);
+
+}
+
+#frmLogin p{
+
+    margin-top: 10px;
+    font-size: 0.8em;
+
+}
+
+#frmLogin p a,
+#boxForgot p a{
+
+    text-decoration: none;
+
+}
+
+#frmLogin p a:hover,
+.dropdown-menu .dropdown-item:hover,
+#boxForgot p a:hover{
+
+    color: rgb(54, 54, 54);
+
+}
+
+::-webkit-input-placeholder{
+
+    font-size: 14px;
+
+}
+
+input:-moz-placeholder{
+
+    font-size: 14px;
+
+}
+
+nav, nav a{
+
+    font-size: 0.95em;
+
+}
+
+.navbar-brand{
+
+    font-size: 1.1em;
+
+}
+
+.dropdown-menu{
+
+    min-width: 8rem;
+
+}
+
+.container-fluid{
+
+    padding: 0;
+    margin-top: 8vh;
+
+}
+
+#nav-menu{
+
+    float: left;
+    height: 92vh;
+    overflow:auto; 
+    padding: 0;
+
+}
+
+#nav-menu::-webkit-scrollbar{
+
+    width: 7px;
+    background:#e3e0d6;
+
+}
+
+#nav-menu::-webkit-scrollbar-track{
+
+    background: rgba(0,0,0,0.1);
+
+}
+
+#nav-menu::-webkit-scrollbar-thumb{
+
+    background:#8b8778; 
+
+}
+
+.border-3 {
+
+    border-width: 3px !important;
+
+}
+
+#nav-menu ul.nav{
+
+    margin-top: 15px;
+
+}
+
+#nav-menu ul.nav:first-child{
+
+    margin-top: 0;
+
+}
+
+#nav-menu .border{
+
+    border-color: #2b3037 !important;
+
+}
+
+#iconActive,
+#iconActiveEE{
+
+    float: right;
+
+}
+
+#iconActive{
+
+    margin-top: 5px;
+
+}
+
+#iconActiveEE{
+
+    margin-top: -25px;
+
+}
+
+#nav-menu ul li .btn{
+
+    margin-top: 30px;
+
+}
+
+.nav-item div{
+
+    margin-bottom: 30px;
+
+}
+
+.nav-item a:hover{
+
+    color: rgb(240, 240, 240);
+
+}
+
+#content-page{
+
+    float: right;
+    min-height: 92vh;
+    max-height: auto;
+    position: relative;
+    padding-top: 25px;
+
+}
+
+.form-row{
+
+    width: 75vh;
+    margin-bottom: 10px;
+
+}
+
+#frmMyAccount button{
+
+    margin: 15px 0;
+
+}
+
+#frmMyAccountForResident button{
+
+    margin-top: 20px;
+    font-size: 0.90em;
+
+}
+
+#content-page #cardProfile{
+
+    float: right;
+    margin-right: 15em;
+    margin-bottom: 10px;
+
+}
+
+#btnFooterModel{
+
+    margin-top: 20px;
+
+}
+
+#frmModalChangePhoto{
+
+    width: 100%;
+
+}
+
+#my_camera{
+
+    margin-bottom: 10px;
+
+}
+
+#iconMenuForCell{
+
+    position: fixed;
+    z-index: 2;
+    margin: 40px 20px;
+    width: 50px;
+    height: 50px;
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#iconMenuForCell button{
+
+    width: 50px;
+    height: 50px;
+
+}
+
+#iconMenuForCell:hover{
+
+    cursor: pointer;
+    
+}
+
+#modalChangePhoto{
+
+    z-index: 9999;
+
+}
+
+#ModalLabelConfirmDelete{
+
+    color: rgb(141, 38, 38);
+
+}
+
+#btnCreateItem{
+
+    margin: 15px 0;
+
+}
+
+#frmCreateUser button[type='submit'],
+#frmCreateEE button[type='submit'],
+#frmUpdateUser button[type='submit'],
+#frmUpdateEE button[type='submit'],
+#frmSearchEE button[type='submit']{
+
+    margin-bottom: 20px;
+
+}
+
+#frmCreateEE input[type='radio'],
+#frmUpdateEE input[type='radio'],
+#frmSearchEE input[type='radio']{
+
+    margin-left: 15px;
+
+}
+
+.active{
+
+    background-color: #25292f;
+
+}
+
+#topHome{
+
+    margin-bottom: 20px;
+
+}
+
+#topHome #topHomeLeft,
+#topHome #topHomeRight{
+
+    height: 250px;
+
+}
+
+#topHome #topHomeRight{
+
+    width: 55vw;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    float: left;
+    
+}
+
+#topHome img{
+
+    width: 55vw;
+    height: 250px;
+    object-fit: cover;
+
+}
+
+#topHome #topHomeRight figcaption{
+
+    position: absolute;
+    top: 145px;
+    right: 45%;
+    font-size: 1.7em;
+    color: rgb(255, 255, 255);
+    text-shadow: 0px 0px 5px black;
+
+}
+
+#topHome #topHomeLeft{
+
+    background-color: #6ab04c;
+    width: 20vw;
+    float: left;
+    display: flex;
+    margin-left: 24px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+#mainHome a,
+#topHome #topHomeLeft{
+
+    color: #dff9fb;
+    text-decoration: none;
+
+}
+
+#topHome #topHomeLeft,
+#mainHome a .infoItem{
+
+    font-size: 1.7em;
+
+}
+
+#topHome #topHomeLeft p .letterDateBigger,
+#mainHome a .infoItem p .letterDateBigger{
+
+    font-size: 3.4em;
+
+}
+
+.infoItem{
+
+    background-color: #686de0;
+    width: 23%;
+    float: left;
+    margin-right: 10px;
+    transition: transform .2s;
+
+}
+
+.infoItem:hover{
+
+    transform: scale(1.2);
+
+}
+
+#infoVisit{
+
+    background-color: #4834d4;
+
+}
+
+#infoResident{
+
+    background-color: #130f40;
+
+}
+
+#infoVisitCurrent{
+
+    background-color: #eb4d4b;
+
+}
+
+#infoWorker{
+
+    background-color: #f0932b;
+
+}
+
+#frmModalLogout{
+
+    width: 100%;
+
+}
+
+.imgLoaderCarrying{
+
+    width: 20px;
+
+}
+
+a.modalMenu:hover{
+
+    color: rgb(54, 54, 54);
+
+}
+
+#resultsRecord{
+
+    margin-left: 150px;
+    width: 340px;
+    height: 290px;
+
+}
+
+#btn_take_snap{
+    
+    margin: 20px 0;
+
+}
+
+#btnGroups .btn{
+
+    margin: 10px;
+    width: 45%;
+
+}
+
+#btnGroupsSend .btn-ok{
+
+    margin-left: 10px;
+
+}
+
+@media screen and (max-width: 1100px) {
+
+    #iconMenuForCell{
+
+        display: flex;
+        
+    }
+
+    #results{
+
+        margin-top: 10px;
+
+    }
+
+    #content-page .card{
+
+        float: right;
+        margin-right: 4em;
+    
+    }
+
+    #frmMyAccountForResident{
+
+        margin-bottom: 15px;
+
+    }
+
+    #nav-menu{
+
+        display: none;
+
+    }
+
+    .btnList{
+
+        display:none;
+
+    }
+
+    #topHome #topHomeRight figcaption{
+
+        top: 100px;
+        right: 20%;
+        left: 10px;
+        font-size: 1.5em;
+
+    }
+
+    
+    #topHome #topHomeLeft,
+    #mainHome a{
+
+        font-size: 1em;
+
+    }
+
+    #topHome #topHomeLeft p .letterDateBigger,
+    #mainHome a .infoItem p .letterDateBigger{
+
+        font-size: 2.8em;
+
+    }
+
+    .infoItem{
+    
+            width: 47%;
+            margin-right: 10px;
+            margin-bottom: 10px;
+    
+    }
+
+    #topHome #topHomeLeft{
+
+        width: 18vw;
+
+    }
+
+    #content-page #cardProfile{
+    
+        margin-right: 5em;
+    
+    }
+
+}
+@media screen and (max-width: 910px) {
+
+    #content-page #cardProfile{
+    
+        float: left;
+    
+    }
+
+}
+
+@media screen and (max-width: 895px) {
+
+    #content-page .card{
+
+        float: left;
+    
+    }
+
+    #results{
+
+        margin-top: 10px;
+
+    }
+
+    #topHome #topHomeLeft,
+    #topHome #topHomeRight{
+
+        height: 150px;
+
+    }
+
+    #topHome #topHomeLeft{
+
+        margin-left: 2px;
+
+    }
+
+    #topHome #topHomeRight figcaption{
+
+        top: 40px;
+        right: 20%;
+        left: 10px;
+
+    }
+
+    .infoItem{
+    
+            width: 46%;
+    
+    }
+
+    #content-page #cardProfile{
+    
+        margin-right: 5em;
+    
+    }
+
+    #resultsRecord{
+
+        margin-left: 0px;
+
+    }
+
+}
+

@@ -1,0 +1,106 @@
+            
+<ul class="nav flex-column flex-nowrap">
+
+    <li class="nav-item border border-right-0 border-left-0 border-top-0 {% if areaChoice == 'home' %}
+    active
+    {% endif %}">
+        <a class="nav-link {{ type }}" href={{ appHost ~ 'area/' ~ functionAccess}}><i class="fas fa-home"></i> Home 
+        {% if areaChoice == 'home' %}
+            <i class="far fa-arrow-alt-circle-left" id="iconActive"></i>
+        {% endif %}</a>
+    </li>
+
+    {% if access == 0 %}
+        <li class="nav-item border border-right-0 border-left-0 border-top-0 {% if areaChoice == 'worker' %}
+        active
+        {% endif %}">
+            <a class="nav-link collapsed {{ type }}" href="#submenuWorkers{{ type }}" data-toggle="collapse" data-target="#submenuWorkers{{ type }}"><i class="fas fa-user-tie"></i>&nbsp;&nbsp; Funcionários  
+            {% if areaChoice == 'worker' %}
+                <i class="far fa-arrow-alt-circle-left" id="iconActive"></i>
+            {% endif %}</a>
+
+            <div class="collapse" id="submenuWorkers{{ type }}" aria-expanded="false">
+                <ul class="flex-column pl-2 nav">
+                    <li class="nav-item">
+                        <a class="nav-link py-0 {{ type }}" href={{ appHost ~ 'area/' ~ functionAccess ~ '/list/worker'}}>Listar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link py-0 {{ type }}" href={{ appHost ~ 'area/' ~ functionAccess ~ '/create/worker'}}>Cadastrar</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+    {% endif %}
+
+    <li class="nav-item border border-right-0 border-left-0 border-top-0 {% if areaChoice == 'visit' %}
+    active
+    {% endif %}">
+        <a class="nav-link collapsed {{ type }}" href="#submenuVisits{{ type }}" data-toggle="collapse" data-target="#submenuVisits{{ type }}"><i class="fas fa-user-clock"></i>&nbsp;&nbsp; Visitantes  
+        {% if areaChoice == 'visit' %}
+            <i class="far fa-arrow-alt-circle-left" id="iconActive"></i>
+        {% endif %}</a>
+
+        <div class="collapse" id="submenuVisits{{ type }}" aria-expanded="false">
+            <ul class="flex-column pl-2 nav">
+                <li class="nav-item">
+                    <a class="nav-link py-0 {{ type }}" href={{ appHost ~ 'area/' ~ functionAccess ~ '/list/visit'}}>Listar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link py-0" href={{ appHost ~ 'area/' ~ functionAccess ~ '/create/visit'}}>Cadastrar</a>
+                </li>
+            </ul>
+        </div>
+    </li>
+
+    <li class="nav-item border border-right-0 border-left-0 border-top-0 {% if areaChoice == 'resident' %}
+    active
+    {% endif %}">
+
+        <a class="nav-link collapsed {{ type }}" href="#submenuResidents{{ type }}" data-toggle="collapse" data-target="#submenuResidents{{ type }}"><i class="fas fa-id-badge"></i>&nbsp;&nbsp; Moradores 
+        {% if areaChoice == 'resident' %}
+            <i class="far fa-arrow-alt-circle-left" id="iconActive"></i>
+        {% endif %}</a>
+
+        <div class="collapse" id="submenuResidents{{ type }}" aria-expanded="false">
+            <ul class="flex-column pl-2 nav">
+                <li class="nav-item">
+                    <a class="nav-link py-0" href={{ appHost ~ 'area/' ~ functionAccess ~ '/list/resident'}}>Listar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link py-0 {{ type }}" href={{ appHost ~ 'area/' ~ functionAccess ~ '/create/resident'}}>Cadastrar</a>
+                </li>
+            </ul>
+        </div>
+    </li>
+
+    <li class="nav-item border border-right-0 border-left-0 border-top-0 {% if areaChoice == 'EE' %}
+    active
+    {% endif %}">
+
+        <a class="nav-link collapsed {{ type }}" href="#submenuEntryExit{{ type }}" data-toggle="collapse" data-target="#submenuEntryExit{{ type }}"><i class="fas fa-exchange-alt"></i>&nbsp;&nbsp; Entradas & <br> Saídas  
+        {% if areaChoice == 'EE' %}
+            <i class="far fa-arrow-alt-circle-left" id="iconActiveEE"></i>
+        {% endif %}</a>
+
+        <div class="collapse" id="submenuEntryExit{{ type }}" aria-expanded="false">
+            <ul class="flex-column pl-2 nav">
+                <li class="nav-item">
+                    <a class="nav-link py-0 {{ type }}" href={{ appHost ~ 'area/' ~ functionAccess ~ '/create/EE'}}>Registrar <br> Entrada</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link py-0" href={{ appHost ~ 'area/' ~ functionAccess ~ '/search/EE/exit'}}>Registrar <br> Saída</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link py-0" href={{ appHost ~ 'area/' ~ functionAccess ~ '/list/EE'}}>Listar</a>
+                </li>
+            </ul>
+        </div>
+    </li>
+
+    {% if access == 0 %}
+        <li class="nav-item col-12 col-sm-11">
+            <a class="nav-link btn btn-outline-success text-center" href={{ appHost ~ 'area/' ~ functionAccess ~ '/report'}}><i class="fas fa-bars"></i> Relatórios</a>
+        </li>
+    {% endif %}
+
+</ul>

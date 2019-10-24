@@ -2,10 +2,10 @@
 
 <section data-markdown>
   
-  ![Screen 01](https://github.com/NathanaelCruz/images_resource_projects/blob/master/Images/screen_Cond_01.png)
-  <img src="https://github.com/NathanaelCruz/images_resource_projects/blob/master/Images/screen_Cond_02.png" width="280"/>
-  <img src="https://github.com/NathanaelCruz/images_resource_projects/blob/master/Images/screen_Cond_03.png" width="280"/>
-  <img src="https://github.com/NathanaelCruz/images_resource_projects/blob/master/Images/screen_Cond_04.png" width="280"/>
+  <img src="https://github.com/NathanaelCruz/images_resource_projects/blob/master/Images/screen_Cond_01.png" width="200"/>
+  <img src="https://github.com/NathanaelCruz/images_resource_projects/blob/master/Images/screen_Cond_02.png" width="200"/>
+  <img src="https://github.com/NathanaelCruz/images_resource_projects/blob/master/Images/screen_Cond_03.png" width="200"/>
+  <img src="https://github.com/NathanaelCruz/images_resource_projects/blob/master/Images/screen_Cond_04.png" width="200"/>
   
 </section>
 

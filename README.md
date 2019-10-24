@@ -9,6 +9,8 @@
   
 </section>
 
+Layout simples e limpo para utilizar da melhor forma.
+
 ![GitHub All Releases](https://img.shields.io/github/downloads/NathanaelCruz/condominium/total)
 ![GitHub top language](https://img.shields.io/github/languages/top/NathanaelCruz/condominium)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/NathanaelCruz/condominium)

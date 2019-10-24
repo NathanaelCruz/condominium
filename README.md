@@ -50,9 +50,9 @@ Antes de começar a utilizar, siga os passos abaixo:
 1. Após realizar a configuração e importação do banco de dados, poderá utilizar o sistema.
 
 ## Login Administrador
-Login: admin··
-Senha: admin··
-Permissão: Master··
+Login: admin  
+Senha: admin  
+Permissão: Master  
 
 
 ### Funcionalidades & Utilizações

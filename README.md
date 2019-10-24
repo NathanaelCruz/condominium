@@ -41,12 +41,12 @@ Conecte-se comigo no linkedin [aqui](https://www.linkedin.com/in/nathanael-cruz-
 Antes de começar a utilizar, siga os passos abaixo:
 1. Importe o arquivo RESIDENTIAL_CONDOMINIUM_DB.sql no mysql.
 1. Antes de entrar no site, abra o arquivo no caminho abaixo:
-  - App/Config/Config.php
-    * Nele será possvel configurar as váriaveis padrões de ambiente, como:
-    * Host name;
-    * Database name;
-    * Login e Paswword do database;
-    * Configuraçes de e-mail, como endereço de e-mail, nome de envio, porta e demais.
+    - App/Config/Config.php
+      * Nele será possvel configurar as váriaveis padrões de ambiente, como:
+      * Host name;
+      * Database name;
+      * Login e Paswword do database;
+      * Configuraçes de e-mail, como endereço de e-mail, nome de envio, porta e demais.
 1. Após realizar a configuração e importação do banco de dados, poderá utilizar o sistema.
 
 ## Login Administrador

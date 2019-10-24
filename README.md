@@ -5,7 +5,7 @@
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/NathanaelCruz/condominium)
 ![GitHub issues](https://img.shields.io/github/issues/NathanaelCruz/condominium)
 ![GitHub last commit](https://img.shields.io/github/last-commit/NathanaelCruz/condominium)
-![GitHub](https://img.shields.io/github/license/NathanaelCruz/condominium)
+![GitHub](https://img.shields.io/github/license/NathanaelCruz/condominium?style=plastic)
 
 ### Descrição
 A aplicação fornece o gerenciamento de entradas e saídas de um condomínio, sendo os registros de entrada habilitando possível descrição para detalhes e o cadastro de saída do visitante ou morador. Além das Entradas/Saídas, tamém há o registro, a atualização, listagem e exclusão de dos usuários dentro do sistema, sendo eles moradores, visitantes ou funcionários, variando o nível de permissão de quem acessa.

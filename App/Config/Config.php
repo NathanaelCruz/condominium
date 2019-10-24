@@ -7,10 +7,10 @@ class Config
 
     CONST HOST_NAME = '127.0.0.1';
     CONST DBNAME = 'RESIDENTIAL_CONDOMINIUM_DB';
-    CONST LOGINDB = '';
-    CONST PASSDB = '';
-    CONST EMAIL = '';
-    CONST EMAIL_PASS = '';
+    CONST LOGINDB = 'admin';
+    CONST PASSDB = 'admin';
+    CONST EMAIL = 'nathanael.cruz.fd@gmail.com';
+    CONST EMAIL_PASS = 'kx123456789';
     CONST HOST_SEND = 'smtp.gmail.com';
     CONST PORT_SEND = 587;
     CONST PROTOCOL_SECURE_SEND = 'tls';

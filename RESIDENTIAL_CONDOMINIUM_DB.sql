@@ -18,6 +18,8 @@
 --
 -- Table structure for table `entrances_and_exits`
 --
+CREATE DATABASE `RESIDENTIAL_CONDOMINIUM_DB`;
+USE `RESIDENTIAL_CONDOMINIUM_DB`;
 
 DROP TABLE IF EXISTS `entrances_and_exits`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;

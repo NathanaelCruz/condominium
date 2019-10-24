@@ -7,6 +7,17 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/NathanaelCruz/condominium)
 ![GitHub](https://img.shields.io/github/license/NathanaelCruz/condominium?style=plastic)
 
+### O Projeto
+
+<section data-markdown>
+  
+  ![Screen 01](https://github.com/NathanaelCruz/images_resource_projects/blob/master/Images/screen_Cond_01.png)
+  <img src="https://github.com/NathanaelCruz/images_resource_projects/blob/master/Images/screen_Cond_02.png" width="280"/>
+  <img src="https://github.com/NathanaelCruz/images_resource_projects/blob/master/Images/screen_Cond_03.png" width="280"/>
+  <img src="https://github.com/NathanaelCruz/images_resource_projects/blob/master/Images/screen_Cond_04.png" width="280"/>
+  
+</section>
+
 ### Descrição
 A aplicação fornece o gerenciamento de entradas e saídas de um condomínio, sendo os registros de entrada habilitando possível descrição para detalhes e o cadastro de saída do visitante ou morador. Além das Entradas/Saídas, tamém há o registro, a atualização, listagem e exclusão de dos usuários dentro do sistema, sendo eles moradores, visitantes ou funcionários, variando o nível de permissão de quem acessa.
 
@@ -38,15 +49,5 @@ Também há a possibilidade de extração de relatórios para acompanhamento do 
 Login: admin
 Senha: admin
 Permissão: Master
-
-#### Veja um pouquinho
-<section data-markdown>
-  
-  ![Screen 01](https://github.com/NathanaelCruz/images_resource_projects/blob/master/Images/screen_Cond_01.png)
-  <img src="https://github.com/NathanaelCruz/images_resource_projects/blob/master/Images/screen_Cond_02.png" width="280"/>
-  <img src="https://github.com/NathanaelCruz/images_resource_projects/blob/master/Images/screen_Cond_03.png" width="280"/>
-  <img src="https://github.com/NathanaelCruz/images_resource_projects/blob/master/Images/screen_Cond_04.png" width="280"/>
-  
-</section>
 
 ##### Desenvolvido por: Nathanael Cruz Alves

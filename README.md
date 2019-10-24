@@ -1,7 +1,13 @@
-# SISTEMA DE GERENCIAMENTO DE ENTRADAS & SAÍDAS
+# GERENCIAMENTO DE ENTRADAS & SAÍDAS PARA CONDOMÍNIOS
+
+![GitHub All Releases](https://img.shields.io/github/downloads/NathanaelCruz/condominium/total)
+![GitHub top language](https://img.shields.io/github/languages/top/NathanaelCruz/condominium)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/NathanaelCruz/condominium)
+![GitHub issues](https://img.shields.io/github/issues/NathanaelCruz/condominium)
+![GitHub last commit](https://img.shields.io/github/last-commit/NathanaelCruz/condominium)
 
 ### Descrição
-A aplicação web tem como objetivo realizar o registro de entradas e sadas de um condomínio, além do registro, aatualização, listagem e exclusão de visitantes, moradores e funcionários.
+A aplicação fornece o gerenciamento de entradas e saídas de um condomínio, sendo os registros de entrada habilitando possível descrição para detalhes e o cadastro de saída do visitante ou morador. Além das Entradas/Saídas, tamém há o registro, a atualização, listagem e exclusão de dos usuários dentro do sistema, sendo eles moradores, visitantes ou funcionários, variando o nível de permissão de quem acessa.
 
 ### Tecnologias & Linguagens
 1. PHP 7.2
@@ -24,12 +30,13 @@ A aplicação web tem como objetivo realizar o registro de entradas e sadas de u
 3. mPDF
 
 ### Funcionalidades & Utilizações
-O sistema apresenta um layout responsivo e flat, adaptável para aparelhos móveis, além de possuir o cadastro de usuários através da Webcam instalada na máquina. O cadastro de entradas e saídas, afim de agilizar os registros, é realizado através da busca de CPF ou RG para validação imediata, apresentando dados de quem será cadastrado.
-Também há a possibilidade de extração de relatórios do sistema para acompanhamento do desempenho do condomínio, possuindo faixas de horário onde há visitantes, total de moradores e visitantes, registros de Saídas e mais informações pertinentes para o acompanhamento comercial do local.
+O sistema apresenta um layout responsivo e com designer flat, adaptável para aparelhos móveis, além de possuir o cadastro de usuários através da Webcam. O cadastro de entradas e saídas, afim de agilizar os registros, é realizado através da busca de CPF ou RG para validação imediata, apresentando dados de quem será cadastrado, como nome completo e foto de cadastro.
+Também há a possibilidade de extração de relatórios para acompanhamento do desempenho do condomínio, possuindo faixas de horário onde há visitantes, total de moradores e visitantes, registros de Saídas e mais informações pertinentes para o acompanhamento comercial do local.
 
 ### Login Administrador
 Login: admin
 Senha: admin
+Permissão: Master
 
 #### Veja um pouquinho
 <section data-markdown>

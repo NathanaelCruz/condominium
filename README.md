@@ -18,36 +18,43 @@ Layout simples e limpo para utilizar da melhor forma.
 ![GitHub last commit](https://img.shields.io/github/last-commit/NathanaelCruz/condominium)
 ![GitHub](https://img.shields.io/github/license/NathanaelCruz/condominium?style=plastic)
 
-### Descrição
-A aplicação fornece o gerenciamento de entradas e saídas de um condomínio, sendo os registros de entrada habilitando possível descrição para detalhes e o cadastro de saída do visitante ou morador. Além das Entradas/Saídas, tamém há o registro, a atualização, listagem e exclusão de dos usuários dentro do sistema, sendo eles moradores, visitantes ou funcionários, variando o nível de permissão de quem acessa.
+### Sobre o Projeto
+> A idéia é realizar o gerenciamento de entradas e saídas de um condomínio, podendo realizar o registro e atualização de visitantes, moradores e de funcionários.
 
-### Tecnologias & Linguagens
-1. PHP 7.2
-1. HTML 5
-1. CSS 3
-1. Jquery 3.4
-1. MySql 5
-1. Ajax
 
-### Frameworks
+### Motivação
+Este  um projeto pessoal para portfólio, então feedbacks são bem-vindos, seja de estrutura do projeto ou mesmo codificação, pois acredito que sempre podemos melhorar em algo.
 
-2. Bootstrap 4.2
-2. Slim 3.0
-2. Twig 2.2
+Conecte-se comigo no linkedin [aqui](https://www.linkedin.com/in/nathanael-cruz-alves/)
 
-### Bibliotecas & Requirements
-3. WebCamera
-3. Wow Slider
-3. PHPMailer
-3. mPDF
+
+### Requerimentos para Utilizar
+1. Servidor Web com suporte a PHP >= 7.1 (recomendação APACHE)
+1. Servidor com suporte a Twig Framework
+1. MySql >= 5
+1. PDO habilitado
+1. Permissão para upload de arquivos
+1. .htaccess permitido no servidor
+
+### Pré-Configuração
+Antes de começar a utilizar, siga os passos abaixo:
+2. Importe o arquivo RESIDENTIAL_CONDOMINIUM_DB.sql no mysql.
+2. Antes de entrar no site, abra o arquivo no caminho abaixo:
+  2. \` App/Config/Config.php
+  2. Nele será possvel configurar as váriaveis padrões de ambiente, como:
+    2. Host name;
+    2. Database name;
+    2. Login e Paswword do database;
+    2. Configuraçes de e-mail, como endereço de e-mail, nome de envio, porta e demais.
+2. Após realizar a configuração e importação do banco de dados, poderá utilizar o sistema.
+
+## Login Administrador
+Login: admin
+Senha: admin
+Permissão: Master
 
 ### Funcionalidades & Utilizações
 O sistema apresenta um layout responsivo e com designer flat, adaptável para aparelhos móveis, além de possuir o cadastro de usuários através da Webcam. O cadastro de entradas e saídas, afim de agilizar os registros, é realizado através da busca de CPF ou RG para validação imediata, apresentando dados de quem será cadastrado, como nome completo e foto de cadastro.
 Também há a possibilidade de extração de relatórios para acompanhamento do desempenho do condomínio, possuindo faixas de horário onde há visitantes, total de moradores e visitantes, registros de Saídas e mais informações pertinentes para o acompanhamento comercial do local.
 
-### Login Administrador
-Login: admin
-Senha: admin
-Permissão: Master
-
-##### Desenvolvido por: Nathanael Cruz Alves
+#### Desenvolvido em 2019

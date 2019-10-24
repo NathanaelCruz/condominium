@@ -36,6 +36,7 @@ Conecte-se comigo no linkedin [aqui](https://www.linkedin.com/in/nathanael-cruz-
 1. Permissão para upload de arquivos
 1. .htaccess permitido no servidor
 
+
 ### Pré-Configuração
 Antes de começar a utilizar, siga os passos abaixo:
 2. Importe o arquivo RESIDENTIAL_CONDOMINIUM_DB.sql no mysql.
@@ -52,6 +53,7 @@ Antes de começar a utilizar, siga os passos abaixo:
 Login: admin
 Senha: admin
 Permissão: Master
+
 
 ### Funcionalidades & Utilizações
 O sistema apresenta um layout responsivo e com designer flat, adaptável para aparelhos móveis, além de possuir o cadastro de usuários através da Webcam. O cadastro de entradas e saídas, afim de agilizar os registros, é realizado através da busca de CPF ou RG para validação imediata, apresentando dados de quem será cadastrado, como nome completo e foto de cadastro.
